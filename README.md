@@ -6,9 +6,7 @@ O plann.er oferece acesso a recursos para registro, recuperaração, atualizaç�
 
 - [Requisitos](#requisitos)
 - [Instalação](#instalação)
-- [Configuração](#configuração)
 - [Endpoints](#endpoints)
-- [Testes](#testes)
 - [Licença](#licença)
 
 ## Requisitos
@@ -46,61 +44,6 @@ npm run dev
 
 A API estará acessível em `http://localhost:3333`.
 
-## Configuração
-
-A configuração do banco de dados depende do ambiente em que você está executando a API.
-
-### Ambiente local (SQLite)
-
-1. Substitua o `datasource` no arquivo `schema.prisma` pelo seguinte:
-
-   ```prisma
-   datasource db {
-       provider = "sqlite"
-       url      = "file:./dev.db"
-   }
-   ```
-
-2. Exclua o diretório `migrations` e o arquivo `dev.db`
-
-3. Execute o seguinte comando:
-
-   ```bash
-   npx prisma migrate dev
-   ```
-
-4. Escreva o nome da sua nova migration como, por exemplo, `create-table-trip`
-
-5. Teste com o seguinte comando:
-   ```bash
-   npx prisma studio
-   ```
-
-### Ambiente de produção
-
-Você pode escolher entre vários bancos de dados, como PostgreSQL, MySQL, MongoDB e outros. Siga estas etapas:
-
-1. Exclua o diretório `migrations` e o arquivo `dev.db`
-
-2. Crie um arquivo `.env` na raiz do projeto
-
-3. Adicione a variável de ambiente `DATABASE_URL` com a conexão do banco de dados em produção
-
-4. Execute o seguinte comando:
-
-   ```bash
-   npx prisma migrate dev
-   ```
-
-5. Escreva o nome da sua nova migration como, por exemplo, `create-table-trip` e confirme
-
-6. Teste com o seguinte comando:
-   ```bash
-   npx prisma studio
-   ```
-
-Para mais informações, consulte a [documentação do Prisma](https://www.prisma.io/docs/concepts).
-
 ## Endpoints
 
 Principais endpoints da API, com informações sobre seus métodos HTTP, descrição, parâmetros, exemplos de solicitações e exemplos de respostas.
@@ -118,10 +61,6 @@ Principais endpoints da API, com informações sobre seus métodos HTTP, descri�
 | /trips/{tripId}/activities            | GET    | Obter as atividades de uma viagem                     | tripId                                                                     | GET /trips/123e4567-e89b-12d3-a456-426614174000/activities       | Status 200 Ok, [JSON]      |
 | /trips/{tripId}/links                 | GET    | Obter os links úteis de uma viagem                    | tripId                                                                     | GET /trips/123e4567-e89b-12d3-a456-426614174000/links            | Status 200 Ok, [JSON]      |
 | /trips/{tripId}/links                 | POST   | Criar um link útil                                    | tripId                                                                     | POST /trips/123e4567-e89b-12d3-a456-426614174000/links           | Status 201 Created, [JSON] |
-
-## Testes
-
-Teste no Swagger: [Documentação Interativa no Swagger](https://school-api-rbyx.onrender.com/api-docs)
 
 ## Licença
 
