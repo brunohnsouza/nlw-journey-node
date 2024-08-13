@@ -1,6 +1,6 @@
 # plann.er
 
-O plann.er oferece acesso a recursos para registro, recuperaração, atualização e exclusão de informações de viagens como atividades, links úteis e participantes.
+O plann.er oferece acesso a recursos para registro, recuperação, atualização e exclusão de informações de viagens como atividades, links úteis e participantes.
 
 ## Índice
 
